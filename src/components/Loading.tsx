@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import useJsonFetch from "../hooks/useJsonFetch";
 
 export default function Loading() {

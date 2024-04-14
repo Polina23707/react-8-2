@@ -17,18 +17,16 @@ export default function useJsonFetch(url: string, opts: any) {
         if (!response.ok) {
           throw new Error(response.statusText);
         }
-        const data = await response.json();
-        setData(data);
+        const result = await response.json();
+        setData(result);
       } catch (e: any) {
         setError(e);
-        console.error('Error: ' + error);
+        console.error('Error: ' + e.message);
       } finally {
         setIsLoading(false);
       }
     }
   fetchList();
-
   }, [])
-
   return([data, isLoading, error]);
 }
